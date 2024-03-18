@@ -1,0 +1,311 @@
+.aboutimages {
+    /* background-color: aqua; */
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.aboutimages img {
+    /* background-color: aqua; */
+    width: 400px;
+    border-radius: 10px;
+}
+
+.aboutimages2 {
+    /* background-color: aqua; */
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.aboutimages2 table {
+    /* border: 1px solid #fff; */
+    /* background-color: yellow; */
+
+}
+
+.aboutimages2 table th {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 30px 100px;
+    width: 100%;
+    /* border-top: 1px solid #fff; */
+
+    /* background-color: yellow; */
+
+}
+
+.mm {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    ;
+}
+
+
+.aboutimages2 img {
+    /* background-color: aqua; */
+    width: 200px;
+    border-radius: 10px;
+}
+
+.aboutValues {
+    margin-top: 100px;
+    padding: 0 280px;
+    text-align: left;
+}
+
+.aboutvaluediv {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.aboutvaluediv img {
+    width: 50%;
+    border-radius: 20px;
+}
+
+.nopading {
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.aboutvaluediv div {
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    text-align: left;
+
+    padding: 0 100px;
+    gap: 50px;
+    /* color: #fff; */
+}
+
+
+.aboutvaluediv2 {
+    display: flex;
+    margin-top: 100px;
+}
+
+.aboutvaluediv2 img {
+    width: 50%;
+    border-radius: 20px;
+}
+
+
+
+.aboutvaluediv2 div {
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    text-align: left;
+
+    padding: 0 100px;
+    padding-left: 0;
+    gap: 50px;
+
+}
+
+.teampics {
+    /* background-color: yellow; */
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.teampics img {
+    background-color: yellow;
+    width: 300px;
+    text-align: left;
+border-radius: 10px;
+}
+
+.imagescardabout {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+.aboutvaluediv3{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ander{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+    /* width: 40%; */
+}
+
+
+.joinsssss{
+    width: 70%;
+    display: flex ;
+    gap: 10px;
+    /* flex-direction: row !important; */
+    /* background-color: yellow; */
+    /* flex-wrap: nowrap; */
+    margin-bottom: 50px;
+}
+
+.joinsssss div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.joinsssss img{
+    width: 300px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutValues {
+        /* margin-top: 100px; */
+        padding: 0 20px;
+        /* text-align: left; */
+    }
+
+    .aboutvaluediv {
+        /* display: flex; */
+        /* margin-top: 100px; */
+        /* margin-bottom: 200px; */
+        flex-direction: column;
+    }
+
+    .aboutvaluediv2 {
+        /* display: flex; */
+        /* margin-top: 100px; */
+        /* margin-bottom: 200px; */
+        flex-direction: column;
+    }
+
+    .aboutvaluediv div {
+        /* background-color: yellow; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* text-align: left; */
+        padding: 0;
+        gap: 15px;
+        /* color: #fff; */
+    }
+
+    .aboutvaluediv2 div {
+        /* background-color: yellow; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* text-align: left; */
+        padding: 0;
+        gap: 15px;
+        /* color: #fff; */
+    }
+
+    .aboutvaluediv img {
+        width: 100%;
+        /* border-radius: 20px; */
+    }
+    .aboutvaluediv2 img {
+        width: 100%;
+        /* border-radius: 20px; */
+    }
+
+    .aboutvaluediv3 {
+        /* display: flex; */
+        /* align-items: center; */
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .joinsssss {
+        width: 100%;
+        /* display: flex; */
+        /* gap: 10px; */
+        /* flex-direction: row !important; */
+        /* background-color: yellow; */
+        /* flex-wrap: nowrap; */
+        /* margin-bottom: 50px; */
+    }
+    .joinsssss div {
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* gap: 10px; */
+        width: 100%;
+    }
+
+    .aboutimages {
+        /* background-color: aqua; */
+        /* display: flex; */
+        /* gap: 50px; */
+        /* margin-top: 50px; */
+        /* justify-content: center; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aboutimages2 table th {
+        border-top: none;
+        border-bottom: none;
+        padding: 30px 0px;
+        /* width: 100%; */
+        /* border-top: 1px solid #fff; */
+        /* background-color: yellow; */
+    }
+
+    .aboutimages2 table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mm{
+         border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-right: none;
+        border-left: none;
+
+    }
+
+    .teampics {
+        /* background-color: yellow; */
+        /* margin-top: 50px; */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* gap: 40px; */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .joinsssss img {
+        width: 170px;
+        border-radius: 10px;
+    }
+
+    .aboutimages img {
+        /* background-color: aqua; */
+        width: 356px;
+        border-radius: 10px;
+    }
+    
+    * {
+        padding-top: 0;
+    }
+
+}

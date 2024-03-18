@@ -1,0 +1,128 @@
+.contactus {
+    display: flex;
+    justify-content: center;
+}
+
+.contactformdiv {
+    background-color: aqua;
+    width: 40%;
+    padding: 20px;
+    display: flex;
+
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+.contactformdiv2 {
+    background-color: aqua;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+.otherinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    width: 15%;
+text-align: left;
+    /* background-color: yellow; */
+}
+
+.contactusform {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: violet; */
+    gap: 20px;
+}
+
+.insideform {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+.insideform label {
+    font-weight: bold;
+    /* font-size: larger; */
+}
+
+.insideform input {
+    /* width: 100%; */
+    padding: 10px;
+    /* height: 30px; */
+    border-radius: 5px;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.25);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+.insideform textarea {
+    /* width: 100%; */
+    /* padding: 10px; */
+    height: 200px;
+    /* width: 100%; */
+    /* height: 30px; */
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+@media screen and (max-width: 768px) {
+    .contactus {
+        /* display: flex; */
+        /* justify-content: center; */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contactformdiv {
+        /* background-color: aqua; */
+        width: 80%;
+        /* padding: 20px; */
+        /* display: flex; */
+        /* background: rgba(255, 255, 255, 0.25); */
+        /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+        /* backdrop-filter: blur(4px); */
+        /* -webkit-backdrop-filter: blur(4px); */
+        /* border-radius: 10px; */
+        /* border: 1px solid rgba(255, 255, 255, 0.18); */
+    }
+
+    .otherinfo {
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: space-between; */
+        /* padding: 50px; */
+        width: 80%;
+        /* text-align: left; */
+        /* background-color: yellow; */
+    }
+}
