@@ -46,9 +46,9 @@ body {
 }
 
 .lo:hover {
-    color: #5e6e83;
+    color: #3894FF;
+    text-decoration: underline #3894FF 2px;
 }
-
 
 li {
     list-style: none;
