@@ -99,7 +99,7 @@ li a {
 }
 
 .ca:hover {
-    background-color: #277c96;
+    background-color: #202b46;
 
 }
 
@@ -162,7 +162,7 @@ button {
 }
 
 .purchase:hover {
-    background-color: #277c96;
+    background-color: #202b46;
     cursor: pointer;
 }
 
@@ -337,7 +337,7 @@ ul a {
 }
 
 .btn-3:hover {
-    background-color: #277c96;
+    background-color: #202b46;
 }
 
 .line-a {
@@ -509,7 +509,7 @@ h3 {
 }
 
 .decoration a:hover {
-    color: #277c96;
+    color: #202b46;
 }
 
 
@@ -819,7 +819,7 @@ h3 {
 
 .navicon {
     display: none;
-    box-shadow: 0 0 1px 1px #277c96;
+    box-shadow: 0 0 1px 1px #202b46;
     width: 50px;
     height: 50px;
     border-radius: 10px;
@@ -850,7 +850,7 @@ h3 {
 .socailbox {
     width: 40px;
     height: 40px;
-    background-color: #277c96;
+    background-color: #202b46;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -918,7 +918,7 @@ h3 {
     .button-center {
         display: flex;
         flex-direction: column;
-        /* background-color: #277c96; */
+        /* background-color: #202b46; */
         justify-content: center;
         align-items: center;
         width: 100%;
