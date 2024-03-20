@@ -111,17 +111,15 @@ app.post("/login", async (req, res) => {
 
 
 
-const PORT = 1337;
-const SSL_KEY_PATH = '/etc/letsencrypt/live/deltabusiness.io/privkey.pem';
-const SSL_CERT_PATH = '/etc/letsencrypt/live/deltabusiness.io/fullchain.pem';
 
-const httpsOptions = {
-  key: fs.readFileSync(SSL_KEY_PATH),
-  cert: fs.readFileSync(SSL_CERT_PATH)
+const options = {
+    key: fs.readFileSync('server.key'),
+    cert: fs.readFileSync('server.crt')
 };
 
-https.createServer(httpsOptions, app).listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+
+https.createServer(options, app).listen(1337, () => {
+  console.log(`Server running on port 1337`);
 });
 
 
