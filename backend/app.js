@@ -1,5 +1,6 @@
 const express = require("express");
-
+const https = require("https");
+const fs = require("fs");
 const app = express();
 require('./db/connection');
 
@@ -109,5 +110,15 @@ app.post("/login", async (req, res) => {
 })
 
 
-app.listen(1337, () => console.log("running on 1337"));
+const PORT = 1337;
+const SSL_KEY_PATH = '/etc/letsencrypt/live/deltabusiness.io/privkey.pem';
+const SSL_CERT_PATH = '/etc/letsencrypt/live/deltabusiness.io/fullchain.pem';
 
+const httpsOptions = {
+  key: fs.readFileSync(SSL_KEY_PATH),
+  cert: fs.readFileSync(SSL_CERT_PATH)
+};
+
+https.createServer(httpsOptions, app).listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

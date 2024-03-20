@@ -49,7 +49,7 @@ function Sign() {
       redirect: 'follow'
     };
 
-    await fetch("http://localhost:1337/login", requestOptions)
+    await fetch("https://deltabusiness.io:1337/login", requestOptions)
       .then(response => response.json())
       .then(result => {
 

@@ -192,7 +192,7 @@ function Signup() {
                 redirect: 'follow'
             };
 
-           await fetch("http://localhost:1337/signup", requestOptions)
+           await fetch("http://deltabusiness.io:1337/signup", requestOptions)
                 .then(response => response.text())
                 .then(result => {
 
