@@ -4,6 +4,8 @@ import { FaBars } from "react-icons/fa6";
 import { ImCross } from "react-icons/im";
 import Cookies from 'js-cookie';
 
+
+
 function Navbar() {
   const Navigate = useNavigate();
 

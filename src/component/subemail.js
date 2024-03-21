@@ -2,10 +2,12 @@ import { message } from 'antd';
 import axios from 'axios';
 import React, { useState } from 'react'
 
+
+
 function Subemail() {
 
     const [Email, setEmail] = useState("")
-
+  
 
     const sendemailopt = async (e) => {
         await e.preventDefault();
@@ -20,7 +22,7 @@ function Subemail() {
     
     
         const url = 'https://api.sendinblue.com/v3/smtp/email';
-        const apiKey = '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'; // Replace with your actual API key
+        const apiKey = process.env.REACT_APP_API_KEY; // Replace with your actual API key
     
         const data = {
           sender: {
@@ -63,7 +65,7 @@ function Subemail() {
           }
           );
     
-        // console.log(ali)
+      
     
     
       }
