@@ -192,7 +192,7 @@ function Sign() {
           <h4>Headquarters</h4>
           <div className="dection">
             <a>Delta Business Solutions</a>
-            <a>123 Main Street, City, State, Zip</a>
+            <a>511 Laredo Ln, Chanhassen, MN 55317</a>
 
             <a>Country</a>
           </div>

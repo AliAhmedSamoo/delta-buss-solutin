@@ -5,6 +5,9 @@ import "./css/about.css"
 import { FaFacebook, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
 
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { message } from 'antd';
+import Subemail from '../component/subemail';
 
 
 
@@ -33,6 +36,82 @@ function Services() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+
+
+
+    const [Name,setName]=useState("")
+    const [Email,setEmail]=useState("")
+    const [CompanyName,setCompanyName]=useState("")
+    const [Phone,setPhone]=useState("")
+    const [Message,setMessage]=useState("")
+
+
+
+
+    const sendemailopt = async (e) => {
+        await e.preventDefault();
+
+       
+
+
+        const hide = message.loading('Action in progress..', 1);
+
+
+
+
+
+        const url = 'https://api.sendinblue.com/v3/smtp/email';
+        const apiKey = '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'; // Replace with your actual API key
+
+        const data = {
+            sender: {
+                name: 'Delta Solution',
+                email: 'info@deltasolution.pk'
+            },
+            to: [
+                {
+                    email: "edevaan@yahoo.com",
+                    // name: name
+                }
+            ],
+            subject: 'Service Form Being Filled by : '+Name+', (Delta Solution)',
+            htmlContent: '<div style="padding: 20px;height: fit-content;"><h1>Someone fill the service form on deltabusiness.io</h1><h3>name : '+Name+' </h3><h3>email : '+Email+'</h3><h3>Company Name : '+CompanyName+'</h3><h3>Phone : '+Phone+'</h3><h3 style="margin: 0; margin-top: 50px;">Message: </h3> <p style=" margin: 0; ">'+Message+' </p></div>'
+        };
+
+        const headers = {
+            'Content-Type': 'application/json',
+            'api-key': apiKey
+        };
+
+        await axios.post(url, data, { headers })
+            .then(response => {
+
+                setName("")
+                setEmail("")
+                setCompanyName("")
+                setPhone("")
+                setMessage("")
+            
+            
+                message.success("Thank you for Contacting Us ")
+                console.log(response)
+            }
+
+            )
+            .catch(error => {
+                message.error("Something Went Wrong")
+             
+                console.log(error)
+            }
+            );
+
+        // console.log(ali)
+
+
+    }
+
+
 
 
 
@@ -229,9 +308,9 @@ function Services() {
                                 <div className='blogItem-author'>
                                     <img loading='lazzy' src="2x/Afzal A..jpg" alt='avatar' />
                                     <div>
-                                        <h6>Hamza A.</h6>
-                                        <p className='nopading'>+92 321 XXXXX</p>
-                                        <p className='nopading'>example@xyz.com</p>
+                                        <h6>Edrik DeVaan</h6>
+                                        <p className='nopading'>+1 952 292 25986</p>
+                                        <p className='nopading'>edevaan@yahoo.com</p>
                                     </div>
                                 </div>
 
@@ -242,12 +321,14 @@ function Services() {
 
 
                                 <div className='contactformdiv2'>
-                                    <form className='contactusform'>
-                                        <div className='insideform'><label>Name *</label> <input /></div>
-                                        <div className='insideform'><label>Email *</label> <input /></div>
-                                        <div className='insideform'><label>Company Name</label> <input /></div>
-                                        <div className='insideform'><label>Phone</label> <input /></div>
-                                        <div className='insideform'><label>Message</label> <textarea /></div>
+                                    <form className='contactusform' onSubmit={sendemailopt}>
+
+
+                                        <div className='insideform'><label>Name *</label> <input required value={Name} onChange={(e)=>setName(e.target.value)}  /></div>
+                                        <div className='insideform'><label>Email *</label> <input required value={Email} onChange={(e)=>setEmail(e.target.value)} /></div>
+                                        <div className='insideform'><label>Company Name</label> <input required value={CompanyName} onChange={(e)=>setCompanyName(e.target.value)} /></div>
+                                        <div className='insideform'><label>Phone</label> <input required value={Phone} onChange={(e)=>setPhone(e.target.value)} /></div>
+                                        <div className='insideform'><label>Message</label> <textarea required value={Message} onChange={(e)=>setMessage(e.target.value)} /></div>
                                         <button style={{ width: '100%', margin: '0' }} className="purchase">Send</button>
 
                                     </form>
@@ -276,10 +357,7 @@ function Services() {
                                     <h5 className="m-head">Subscribe To Our newsletter</h5>
                                 </div>
 
-                                <div className="email-bar">
-                                    <input className="email-edit" type="email" id="email" name="email" placeholder="email" required />
-                                    <button className="subs">Subscribe</button>
-                                </div>
+                                <Subemail/>
                             </ul>
 
                         </div>
@@ -315,7 +393,7 @@ function Services() {
                         <h4>Headquarters</h4>
                         <div className="dection">
                             <a>Delta Business Solutions</a>
-                            <a>123 Main Street, City, State, Zip</a>
+                            <a>511 Laredo Ln, Chanhassen, MN 55317</a>
 
                             <a>Country</a>
                         </div>

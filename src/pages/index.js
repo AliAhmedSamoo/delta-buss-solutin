@@ -4,6 +4,7 @@ import "./css/index.css"
 import { useNavigate } from 'react-router-dom';
 
 import { FaFacebook, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
+import Subemail from '../component/subemail';
 
 
 
@@ -427,10 +428,7 @@ const Navigate = useNavigate()
             <h1>Subscribe to our newsletter</h1>
           </div>
           <a className="para-line">Enjoy using Block Template and stay tuned for the latest updates and news.</a>
-          <div className="email-bar">
-            <input className="email-edit" type="email" id="email" name="email" placeholder="email" required />
-            <button className="subs">Subscribe</button>
-          </div>
+          <Subemail/>
         </div>
       </div>
 
@@ -465,7 +463,7 @@ const Navigate = useNavigate()
               <h4>Headquarters</h4>
               <div className="dection">
                 <a>Delta Business Solutions</a>
-                <a>123 Main Street, City, State, Zip</a>
+                <a>511 Laredo Ln, Chanhassen, MN 55317</a>
 
                 <a>Country</a>
               </div>

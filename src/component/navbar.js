@@ -79,8 +79,34 @@ function Navbar() {
                 <li><a href="" class="lo" onClick={() => Navigate("/testimonials")}>Testimonials</a></li>
                 <li><a href="" class="lo" onClick={() => Navigate("/contact")}>Contact Us</a></li>
                 <div class="button-center">
-                  <li><button class="login" onClick={() => Navigate("/signin")}>Login</button></li>
-                  <li><button class="ca" onClick={() => Navigate("/signUp")}>Create Account</button></li>
+
+                  {token !== "dskgfsdgfkgsdfkjg35464154845674987dsf@53" && <>
+                    <li><button class="login" onClick={() => Navigate("/signin")}>Login</button></li>
+                    <li><button class="ca" onClick={() => Navigate("/signUp")}>Create Account</button></li>
+                  </>}
+
+                  {token === "dskgfsdgfkgsdfkjg35464154845674987dsf@53" && <>
+                    <li>
+
+                      <div className='blogItem-author' style={{ textAlign: 'left' }}>
+                        <img loading='lazzy' src="https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png" alt='avatar' />
+                        <div>
+                          <h6>{name}</h6>
+
+                          <p className='nopading'>{email}</p>
+                        </div>
+                      </div>
+
+                    </li>
+                    <li><button class="ca" onClick={() => {
+
+                      const allCookies = Cookies.get();
+                      for (const cookieName in allCookies) {
+                        Cookies.remove(cookieName);
+                      }
+                      Navigate('/signin')
+                    }}>Log Out</button></li>
+                  </>}
                 </div>
               </ul>
 

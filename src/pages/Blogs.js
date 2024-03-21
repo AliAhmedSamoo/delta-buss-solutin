@@ -5,6 +5,8 @@ import "./css/blog.css"
 import { FaFacebook, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
 
 import { useNavigate } from 'react-router-dom';
+import Subemail from '../component/subemail';
+import Cookies from 'js-cookie';
 
 
 
@@ -36,6 +38,10 @@ function Blogs() {
     };
   }, []);
 
+  const id = Cookies.get("id")
+  const token = Cookies.get("Token")
+  const name = Cookies.get("Name")
+  const email = Cookies.get("email")
 
 
 
@@ -134,7 +140,7 @@ function Blogs() {
 
       <Navbar />
 
-      <div style={{height:"50px"}}></div>
+      <div style={{ height: "50px" }}></div>
 
       <div className="pattern-square"></div>
 
@@ -145,9 +151,12 @@ function Blogs() {
           <h1 className="heading"> Our articles on agency</h1>
           <h3 className="sub-line">At least, not exclusively. Reduced recruiting costs, more efficient and effective</h3>
           <h3 className="s-line">communication.</h3>
+          {token === "dskgfsdgfkgsdfkjg35464154845674987dsf@53" && <>
+            <div className="button-2" style={{ marginBottom: '50px' }}>
+              <button className="purchase" onClick={() => Navigate("/postblog")}>Post A Blog</button>
 
-
-
+            </div>
+          </>}
         </div>
 
 
@@ -163,20 +172,20 @@ function Blogs() {
 
 
             <div className='blogItem-wrap'>
-               <img loading='lazzy' className='blogItem-cover nopading' src={blog.cover} alt='cover' />
-          
+              <img loading='lazzy' className='blogItem-cover nopading' src={blog.cover} alt='cover' />
+
               <p className='chip'>{blog.category}</p>
               <h3 className='nopading'>{blog.title}</h3>
               <p className='blogItem-desc nopading'>{blog.description}</p>
               <footer>
                 <div className='blogItem-author'>
-                   <img loading='lazzy' src={blog.authorAvatar} alt='avatar' />
+                  <img loading='lazzy' src={blog.authorAvatar} alt='avatar' />
                   <div>
                     <h6>{blog.authorName}</h6>
                     <p className='nopading'>{blog.createdAt}</p>
                   </div>
                 </div>
-               
+
               </footer>
             </div>
 
@@ -203,12 +212,9 @@ function Blogs() {
                 <h5 className="m-head">Subscribe To Our newsletter</h5>
               </div>
 
-              <div className="email-bar">
-                <input className="email-edit" type="email" id="email" name="email" placeholder="email" required />
-                <button className="subs">Subscribe</button>
-              </div>
+              <Subemail />
             </ul>
-           
+
           </div>
         </div>
       </footer>
@@ -216,62 +222,62 @@ function Blogs() {
 
 
       <footer className="main-foot">
-            <div className="decoration">
-              <h4>Services</h4>
-              <a onClick={() => Navigate('/services')}>Business Consulting</a>
-              <a onClick={() => Navigate('/services')}>Web Development</a>
-              <a onClick={() => Navigate('/services')}>Digital Marketing</a>
-              <a onClick={() => Navigate('/services')}>Content Creation</a>
-              <a onClick={() => Navigate('/services')}>Project Management</a>
-            </div>
-            <div className="decoration">
-              <h4>About Us</h4>
+        <div className="decoration">
+          <h4>Services</h4>
+          <a onClick={() => Navigate('/services')}>Business Consulting</a>
+          <a onClick={() => Navigate('/services')}>Web Development</a>
+          <a onClick={() => Navigate('/services')}>Digital Marketing</a>
+          <a onClick={() => Navigate('/services')}>Content Creation</a>
+          <a onClick={() => Navigate('/services')}>Project Management</a>
+        </div>
+        <div className="decoration">
+          <h4>About Us</h4>
 
-              <a onClick={() => Navigate('/testimonials')}>Client Testimonials</a>
-              <a onClick={() => Navigate('/blogs')}>Blog</a>
-              <a>Careers</a>
-            </div>
-            <div className="decoration">
-              <h4>Contact Us</h4>
-              <a onClick={() => Navigate('/contact')}>Contact Information</a>
-              <a onClick={() => Navigate('/contact')}>Request a Quote</a>
+          <a onClick={() => Navigate('/testimonials')}>Client Testimonials</a>
+          <a onClick={() => Navigate('/blogs')}>Blog</a>
+          <a>Careers</a>
+        </div>
+        <div className="decoration">
+          <h4>Contact Us</h4>
+          <a onClick={() => Navigate('/contact')}>Contact Information</a>
+          <a onClick={() => Navigate('/contact')}>Request a Quote</a>
 
-              <a>FAQ</a>
-            </div>
-            <div className="decoration">
-              <h4>Headquarters</h4>
-              <div className="dection">
-                <a>Delta Business Solutions</a>
-                <a>123 Main Street, City, State, Zip</a>
+          <a>FAQ</a>
+        </div>
+        <div className="decoration">
+          <h4>Headquarters</h4>
+          <div className="dection">
+            <a>Delta Business Solutions</a>
+            <a>511 Laredo Ln, Chanhassen, MN 55317</a>
 
-                <a>Country</a>
-              </div>
+            <a>Country</a>
+          </div>
+        </div>
+      </footer>
+      <footer className="main-foot">
+        <div className='downfoot'>
+          <div>
+            <img src='logo.png' alt='' width={"100px"} />
+          </div>
+          <div style={{ display: 'flex', fontSize: '12px', paddingTop: '0' }}>Copyright © 2024 &#160; <div style={{ color: "#3894FF" }}> DELTA BUSINESS SOLUTIONS</div></div>
+          <div className='downfootss'>
+            <div style={{ display: 'flex', gap: '20px' }}>
+              <div className='socailbox'><FaFacebook /></div>
+              <div className='socailbox'><FaInstagram /></div>
+              <div className='socailbox'><FaTwitter /></div>
             </div>
-          </footer>
-          <footer className="main-foot">
-            <div className='downfoot'>
-              <div>
-                <img src='logo.png' alt='' width={"100px"} />
-              </div>
-              <div style={{ display: 'flex', fontSize: '12px', paddingTop: '0' }}>Copyright © 2024 &#160; <div style={{ color: "#3894FF" }}> DELTA BUSINESS SOLUTIONS</div></div>
-              <div className='downfootss'>
-                <div style={{ display: 'flex', gap: '20px' }}>
-                  <div className='socailbox'><FaFacebook /></div>
-                  <div className='socailbox'><FaInstagram /></div>
-                  <div className='socailbox'><FaTwitter /></div>
-                </div>
-                <div>
-                  <div onClick={() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                    });
-                  }} className='socailbox addsa'><FaArrowUp /></div>
-                </div>
-              </div>
+            <div>
+              <div onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                });
+              }} className='socailbox addsa'><FaArrowUp /></div>
+            </div>
+          </div>
 
-            </div>
-          </footer>
+        </div>
+      </footer>
 
 
     </div>

@@ -5,6 +5,7 @@ import "./css/Testimonials.css"
 import { FaFacebook, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
 
 import { useNavigate } from 'react-router-dom';
+import Subemail from '../component/subemail';
 
 
 
@@ -159,10 +160,7 @@ const Navigate = useNavigate()
                                     <h5 className="m-head">Subscribe To Our newsletter</h5>
                             </div>
 
-                            <div className="email-bar">
-                                <input className="email-edit" type="email" id="email" name="email" placeholder="email" required />
-                                <button className="subs">Subscribe</button>
-                            </div>
+                            <Subemail/>
                         </ul>
                       
                     </div>
@@ -198,7 +196,7 @@ const Navigate = useNavigate()
               <h4>Headquarters</h4>
               <div className="dection">
                 <a>Delta Business Solutions</a>
-                <a>123 Main Street, City, State, Zip</a>
+                <a>511 Laredo Ln, Chanhassen, MN 55317</a>
 
                 <a>Country</a>
               </div>
