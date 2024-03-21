@@ -13,7 +13,7 @@ function Navbar() {
   const token = Cookies.get("Token")
   const name = Cookies.get("Name")
   const email = Cookies.get("email")
-
+  const dsgvdrsfbhdfgbdcftgbh = Cookies.get("dsgvdrsfbhdfgbdcftgbh")
 
   return (
     <div>
@@ -56,7 +56,7 @@ function Navbar() {
                     </div>
 
                   </li>
-                  <li><button class="login" onClick={() => Navigate("/admin")}>Admin</button></li>
+              {dsgvdrsfbhdfgbdcftgbh === "dfbxfdbxfbgdfvdfxdscxsdcgdfsbcdfc54845674987dsf@53" && <>    <li><button class="login" onClick={() => Navigate("/admin")}>Admin</button></li></>}
                   <li><button class="ca" onClick={() => {
 
                     const allCookies = Cookies.get();

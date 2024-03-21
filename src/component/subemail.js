@@ -20,7 +20,7 @@ function Subemail() {
     
     
         const url = 'https://api.sendinblue.com/v3/smtp/email';
-        const apiKey = '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'; // Replace with your actual API key
+        const apiKey = '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'; // Replace with your actual API key
     
         const data = {
           sender: {
@@ -30,6 +30,7 @@ function Subemail() {
           to: [
             {
               email: "edevaan@yahoo.com",
+              // email:"aliahmed.samoo.1@gmail.com"
               // name: name
             }
           ],

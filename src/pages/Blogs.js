@@ -150,7 +150,7 @@ function Blogs() {
         redirect: 'follow'
     };
 
-    fetch("https://localhost:1337/blog", requestOptions)
+    fetch("https://deltabusiness.io:1337/blog", requestOptions)
         .then(response => response.json())
         .then(result => setblogList(result))
         .catch(error => console.log('error', error));

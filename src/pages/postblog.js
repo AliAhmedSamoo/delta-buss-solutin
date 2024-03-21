@@ -87,15 +87,15 @@ function Postblog() {
             redirect: 'follow'
         };
 
-        await fetch("https://localhost:1337/upload", requestOptions)
+        await fetch("https://deltabusiness.io:1337/upload", requestOptions)
             .then(response => response.json())
             .then(result => {
 
 
                
-                    // Navigate("/")
+              
                     message.success(result)
-                   
+                    Navigate("/")
 
 
             })

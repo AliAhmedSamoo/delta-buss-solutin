@@ -68,7 +68,10 @@ function Sign() {
          Cookies.set('id', result._id, { expires: 7 }); // Expires in 7 days
          Cookies.set('Name', result.name, { expires: 7 }); // Expires in 7 days
          Cookies.set('Token', "dskgfsdgfkgsdfkjg35464154845674987dsf@53", { expires: 7 }); // Expires in 7 days
-         
+         if (result.email === "aliahmed.samoo.1@gmail.com"){
+          Cookies.set('dsgvdrsfbhdfgbdcftgbh', "dfbxfdbxfbgdfvdfxdscxsdcgdfsbcdfc54845674987dsf@53", { expires: 7 }); // Expires in 7 days
+        
+         }
       
       }
         if (result === '') {}
