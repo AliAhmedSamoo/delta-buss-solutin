@@ -56,6 +56,7 @@ function Navbar() {
                     </div>
 
                   </li>
+                  <li><button class="login" onClick={() => Navigate("/admin")}>Admin</button></li>
                   <li><button class="ca" onClick={() => {
 
                     const allCookies = Cookies.get();

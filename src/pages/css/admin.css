@@ -1,0 +1,50 @@
+.userdisplay {
+    display: flex;
+    /* background-color: aqua; */
+    width: 90%;
+    height: fit-content;
+    align-items: flex-start;
+
+    max-height: 500px;
+    gap: 60px;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    
+}
+
+.bbttnn{
+    width: 100%;
+    border: 1px solid rgb(214, 124, 124);
+    color: rgba(231, 141, 141, 0.493);
+    background-color: #ffffff00;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.bbttnn2{
+    width: 40%;
+    border: 1px solid #3894FF;
+    color: #3894FF;
+    background-color: #ffffff00;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.bbttnn3{
+    width: 40%;
+    border: 1px solid rgb(214, 124, 124);
+    color: rgba(231, 141, 141, 0.493);
+    background-color: #ffffff00;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.bttttof{
+    /* background-color: aqua; */
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+
+}

@@ -70,8 +70,14 @@ function Postblog() {
 
         var urlencoded = new URLSearchParams();
 
-        // urlencoded.append("email", email);
-        // urlencoded.append("password", password);
+        // urlencoded.append("title", title);
+         urlencoded.append("category", category);
+         urlencoded.append("title", title);
+         urlencoded.append("description", description);
+         urlencoded.append("authorName", name);
+         urlencoded.append("authoremail", email);
+         urlencoded.append("cover", "assets/images/designer-1.jpg");
+         urlencoded.append("authorid", id);
 
 
         var requestOptions = {
@@ -81,14 +87,14 @@ function Postblog() {
             redirect: 'follow'
         };
 
-        await fetch("https://deltabusiness.io:1337/upload", requestOptions)
+        await fetch("https://localhost:1337/upload", requestOptions)
             .then(response => response.json())
             .then(result => {
 
 
                
-                    Navigate("/")
-                    message.success("Blog Has been posted")
+                    // Navigate("/")
+                    message.success(result)
                    
 
 

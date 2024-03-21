@@ -15,6 +15,7 @@ import Blogview from './pages/Blogview';
 import Sign from './pages/sign';
 import Signup from './pages/sign up';
 import Postblog from './pages/postblog';
+import Admin from './pages/admin';
 
 
 
@@ -74,6 +75,7 @@ function App() {
             <Route path='/signin' element={<Sign />} />
             <Route path='/signUp' element={<Signup />} />
             <Route path='/postblog' element={<Postblog />} />
+            <Route path='/admin' element={<Admin />} />
 
 
 

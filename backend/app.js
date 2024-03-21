@@ -14,7 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const User = require("./modules/user")
+const User = require("./modules/user");
+const Apblogs = require("./modules/apblogs");
+const Blogs = require("./modules/blogs");
 
 app.get('/', (req, res) => {
     const date = Date.now();
@@ -48,10 +50,10 @@ app.post('/signup', async (req, res) => {
 
 
 
-            
+
 
             const newUser = await new User({ name, email, password: hashedPassword, phone });
-            const ali =  await newUser.save()
+            const ali = await newUser.save()
 
             console.log("Registration complete. Please log in to proceed.")
             res.json("Registration complete. Please log in to proceed.")
@@ -76,7 +78,7 @@ app.post("/login", async (req, res) => {
         if (user2) {
             const enteredPassword = password;
 
-        
+
             const passwordMatch = await bcrypt.compare(enteredPassword, user2.password);
 
 
@@ -110,26 +112,185 @@ app.post("/login", async (req, res) => {
 })
 
 
+app.get("/user", async (req, res) => {
 
 
-app.post('/upload', (req, res) => {
-    if (!req.files || Object.keys(req.files).length === 0) {
-      return res.status(400).send('No files were uploaded.');
+
+    try {
+
+        await User.find().sort({ timestamp: -1 })
+            .then(Modules => res.json(Modules))
+
+    } catch (error) {
+        console.error(error);
+
     }
-  
-    const uploadedFile = req.files.file;
-  
-    // Move the file to a location on your server
-    uploadedFile.mv('/path/to/destination/folder/' + uploadedFile.name, (err) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-  
-      res.send('File uploaded!');
-    });
-  });
 
 
+
+})
+
+app.get("/apblog", async (req, res) => {
+
+
+
+    try {
+
+        await Apblogs.find().sort({ timestamp: -1 })
+            .then(Modules => res.json(Modules))
+
+    } catch (error) {
+        console.error(error);
+
+    }
+
+
+
+})
+
+
+app.post("/dtluser", async (req, res) => {
+
+    try {
+
+
+        await User.deleteOne(req.body)
+
+        await User.find().sort({ timestamp: -1 })
+            .then(Modules => res.json(Modules))
+
+
+    } catch (error) {
+        console.log(error)
+        res.send("Something Went Wrong Try Again")
+    }
+
+
+});
+
+app.post("/dtlapblog", async (req, res) => {
+
+    try {
+
+
+        await Apblogs.deleteOne(req.body)
+
+        await Apblogs.find().sort({ timestamp: -1 })
+            .then(Modules => res.json(Modules))
+
+
+    } catch (error) {
+        console.log(error)
+        res.send("Something Went Wrong Try Again")
+    }
+
+
+});
+
+app.post("/dtlblog", async (req, res) => {
+
+    try {
+
+
+        await Blogs.deleteOne(req.body)
+
+        await Blogs.find().sort({ timestamp: -1 })
+            .then(Modules => res.json(Modules))
+
+
+    } catch (error) {
+        console.log(error)
+        res.send("Something Went Wrong Try Again")
+    }
+
+
+});
+
+app.post("/uploadblog", async (req, res) => {
+
+    try {
+
+
+        const { category, title, description, authorName, authoremail, cover, authorid,_id } = req.body
+
+
+
+        await Apblogs.deleteOne({ _id: _id });
+
+
+
+
+        const apblogs = await new Blogs({ category, title, description, authorName, authoremail, cover, authorid });
+        await apblogs.save()
+
+        console.log("blog posted.")
+    
+
+        await Apblogs.find().sort({ timestamp: -1 })
+            .then(Modules => res.json(Modules))
+
+
+    } catch (error) {
+        console.log(error)
+        res.send("Something Went Wrong Try Again")
+    }
+
+
+});
+
+
+
+
+
+app.post('/upload', async (req, res) => {
+
+
+    console.log(req.body)
+    try {
+
+
+
+        const { category, title, description, authorName, authoremail, cover, authorid } = req.body
+
+
+
+
+
+
+
+
+        const apblogs = await new Apblogs({ category, title, description, authorName, authoremail, cover, authorid });
+        await apblogs.save()
+
+        console.log("blog posted.")
+        res.json("Blog Has been posted, you can see your blog After Admin Approval")
+
+
+    } catch (error) {
+        console.log(error)
+        res.send("Something Went Wrong Try Again")
+    }
+
+});
+
+
+app.get("/blog", async (req, res) => {
+
+
+
+    try {
+
+        await Blogs.find().sort({ timestamp: -1 })
+            .then(Modules => res.json(Modules))
+
+    } catch (error) {
+        console.error(error);
+
+    }
+
+
+
+})
 
 
 
@@ -142,7 +303,7 @@ const options = {
 
 
 https.createServer(options, app).listen(1337, () => {
-  console.log(`Server running on port 1337`);
+    console.log(`Server running on port 1337`);
 });
 
 
