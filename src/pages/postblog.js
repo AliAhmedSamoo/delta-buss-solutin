@@ -41,10 +41,10 @@ function Postblog() {
 
 
 
-    const [title, settitle] = useState(false);
-    const [category, setcategory] = useState(false);
-    const [description, setdescription] = useState(false);
-    const [cover, setcover] = useState(false);
+    const [title, settitle] = useState("");
+    const [category, setcategory] = useState("");
+    const [description, setdescription] = useState("");
+    const [cover, setcover] = useState("");
 
 
 
@@ -81,27 +81,15 @@ function Postblog() {
             redirect: 'follow'
         };
 
-        await fetch("https://deltabusiness.io:1337/login", requestOptions)
+        await fetch("https://deltabusiness.io:1337/upload", requestOptions)
             .then(response => response.json())
             .then(result => {
 
 
-                if (result === 'user not found') {
-                    message.error("Please enter a correct Email Address")
-                } else if (result === "Password is incorrect.") {
-                    message.error("Please enter a correct Password")
-                } else {
-
+               
                     Navigate("/")
-                    message.success("logged in")
-                    Cookies.set('email', result.email, { expires: 7 }); // Expires in 7 days
-                    Cookies.set('id', result._id, { expires: 7 }); // Expires in 7 days
-                    Cookies.set('Name', result.name, { expires: 7 }); // Expires in 7 days
-                    Cookies.set('Token', "dskgfsdgfkgsdfkjg35464154845674987dsf@53", { expires: 7 }); // Expires in 7 days
-
-
-                }
-                if (result === '') { }
+                    message.success("Blog Has been posted")
+                   
 
 
             })
@@ -152,18 +140,18 @@ function Postblog() {
                 </div>
 
                 <div className='contactus' style={{ padding: '200px 0' }}>
-                    <div className='contactformdiv'>
+                    <div className='contactformdiv' style={{width:'80%'}}>
                         <form className='contactusform' onSubmit={formsub}>
 
-                            <div className='insideform'><label>Title</label> <input /></div>
-                            <div className='insideform'><label>Category</label> <input /></div>
+                            <div className='insideform'><label>Title</label> <input required value={title} onChange={(e)=>settitle(e.target.value)}/></div>
+                            <div className='insideform'><label>Category</label> <input required value={category} onChange={(e)=>setcategory(e.target.value)}/></div>
 
-                            <div className='insideform'><label>Cover Photo</label> <input type='file' /></div>
+                            <div className='insideform'><label>Cover Photo</label> <input accept='.png,.jpg,.jpeg' required type='file'  /></div>
 
-                            <div className='insideform'><label>description</label> <textarea /></div>
+                            <div className='insideform'><label>Description</label> <textarea required value={description} onChange={(e)=>setdescription(e.target.value)}/></div>
 
-                            <div className='insideform'><label>Author Name</label> <input /></div>
-                            <div className='insideform'><label>Author Email</label> <input /></div>
+                            <div className='insideform'><label>Author Name</label> <input required disabled value={name}/></div>
+                            <div className='insideform'><label>Author Email</label> <input disabled required value={email}/></div>
 
 
 
