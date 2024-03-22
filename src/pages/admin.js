@@ -185,13 +185,14 @@ function Admin() {
 
                             <div className='blogItem-wrap'>
                                 <img loading='lazzy' className='blogItem-cover nopading' src={blog.cover} alt='cover' />
+                                
 
                                 <p className='chip'>{blog.category}</p>
                                 <h3 className='nopading'>{blog.title}</h3>
                                 <p className='blogItem-desc nopading'>{blog.description}</p>
                                 <footer>
                                     <div className='blogItem-author'>
-                                        <img loading='lazzy' src={blog.authorAvatar} alt='avatar' />
+                                        <img loading='lazzy' src="https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png" alt='avatar' />
                                         <div>
                                             <h6>{blog.authorName}</h6>
                                             <p className='nopading'>{blog.timestamp}</p>
